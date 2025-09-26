@@ -14,6 +14,7 @@ import {
     SheetTrigger,
 } from './ui/sheet';
 import { Separator } from '@radix-ui/react-dropdown-menu';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const user = true;
@@ -32,18 +33,18 @@ const Navbar = () => {
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Avatar>
-                                        <AvatarImage src="https://github.com/shadcn.png" />
+                                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                                         <AvatarFallback>CN</AvatarFallback>
                                     </Avatar>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent className="w-56" align="start">
                                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                                     <DropdownMenuGroup>
-                                        <DropdownMenuItem>
-                                            My learning
+                                        <DropdownMenuItem><Link to="my-learning">My learning</Link>
+
                                         </DropdownMenuItem>
-                                        <DropdownMenuItem>
-                                            Edit Profile
+                                        <DropdownMenuItem><Link to="profile">Edit Profile</Link>
+                                        
                                         </DropdownMenuItem>
                                         <DropdownMenuItem>
                                             Log out
@@ -67,13 +68,13 @@ const Navbar = () => {
                     <DarkMode />
                 </div>
             </div>
-                {/* Mobile view */}
-                <div className="flex md:hidden items-center justify-between px-4 h-full">
-                    <h1 className="font-extrabold text-2xl">E-learning</h1>
-                    <MobileNavbar />
+            {/* Mobile view */}
+            <div className="flex md:hidden items-center justify-between px-4 h-full">
+                <h1 className="font-extrabold text-2xl">E-learning</h1>
+                <MobileNavbar />
             </div>
         </div>
-    
+
     );
 };
 
